@@ -1,11 +1,11 @@
-[block]
-model = "tJ"
-n_sites = 10
+[hamiltonian]
+t1 = 10
+t2 = 0.0
 
 [files]
-save_file = "/Users/lstaszewski/Research/Projects/julia-ed/jobs/waiting/2023-03-28.test/data/data_0.h5"
+save_file = "/Users/lstaszewski/Research/Projects/template_project_folder/jobs/waiting/2023-03-28.test/data/data_0.h5"
 
 [misc]
-n_jobs = 1
+n_jobs = 5
 job_name = "2023-03-28.test"
 date = 2023-03-28
