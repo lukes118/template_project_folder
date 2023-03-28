@@ -10,3 +10,5 @@
 
 - if created on cluster submit with:
   $ sbatch job_script.sh
+
+- files will be saved to the data folder within the job directory

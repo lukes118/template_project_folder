@@ -61,7 +61,10 @@ else:
     exit(1)
 
 os.mkdir(path_to_job)
-write_job_files.write_toml_files(master_config, path_to_job)
+
+# TODO: choose file extension for save data e.g. .h5
+save_file_extension = '.txt'
+write_job_files.write_toml_files(master_config, path_to_job, save_file_extension)
 
 path_to_config = os.path.join(path_to_job, 'config', 'config_$SLURM_ARRAY_TASK_ID.toml')
 

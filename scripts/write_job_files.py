@@ -4,7 +4,7 @@ import numpy as np
 import os
 import datetime
 
-def write_toml_files(master_config, path_to_job):
+def write_toml_files(master_config, path_to_job, save_file_extension):
     path_to_save = os.path.join(path_to_job, 'data')
     os.mkdir(path_to_save)
 
@@ -38,7 +38,7 @@ def write_toml_files(master_config, path_to_job):
         # changing arrays to specific values
         for k, param in enumerate(param_set):
             sub_config[group_labels[k]][param_labels[k]] = param
-        save_file = os.path.join(path_to_save, f'data_{s}.h5')
+        save_file = os.path.join(path_to_save, f'data_{s}' + save_file_extension)
         sub_config['files']['save_file'] = save_file
 
         # saving to toml

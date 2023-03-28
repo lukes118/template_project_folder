@@ -1,5 +1,5 @@
 using TOML
-print("runnign mandelbrot program... ")
+print("running mandelbrot program... ")
 println()
 
 fname = ARGS[1]
@@ -25,3 +25,9 @@ for y=1.0:-0.05:-1.0
     println()
 end
 
+# saving some data
+save_file = config["files"]["save_file"]
+open(save_file, "w") do io
+  write(io, "t1 = ")
+  write(io, t1)
+end;
