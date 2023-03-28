@@ -50,7 +50,7 @@ master_config = {
         'date': date,
     },
 }
-
+#================================================================================
 # TODO: specify you directory on the cluster
 # setting slurm paths
 if run_loc == "mac":
@@ -71,6 +71,7 @@ with open(path_to_master_config, 'r') as f:
     master_config = toml.load(f)
     n_jobs = master_config["misc"]["n_jobs"]
 
+#================================================================================
 # TODO: set the slurm parameters
 # setting slurm parameters
 slurm_kwargs = {
