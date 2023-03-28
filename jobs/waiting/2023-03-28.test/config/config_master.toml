@@ -1,0 +1,10 @@
+[block]
+model = "tJ"
+n_sites = 10
+
+[files]
+
+[misc]
+n_jobs = 1
+job_name = "2023-03-28.test"
+date = 2023-03-28
