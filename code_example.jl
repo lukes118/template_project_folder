@@ -1,3 +1,14 @@
+using TOML
+print("runnign mandelbrot program... ")
+println()
+
+fname = ARGS[1]
+config = TOML.parsefile(fname)
+
+# getting a parameter from the config file
+t1 = config["hamiltonian"]["t1"]
+print("t1 = ", t1)
+println()
 
 function mandelbrot(a)
     z = 0
