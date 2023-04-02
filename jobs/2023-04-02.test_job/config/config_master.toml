@@ -1,0 +1,11 @@
+[group_1]
+param_1 = [ 0.0, 2.0, 4.0,]
+
+[group_2]
+param_3 = 10
+
+[files]
+save_file = "data.h5"
+
+[misc]
+n_jobs = 3
