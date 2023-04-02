@@ -51,3 +51,5 @@ my_job.set_slurm_kwargs(slurm_kwargs)
 
 # write a script that loops through jobs
 my_job.write_job_script()
+print('finished_writing job to: ')
+print(my_job.job_dir)
