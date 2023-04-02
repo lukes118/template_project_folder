@@ -6,8 +6,11 @@ fname = ARGS[1]
 config = TOML.parsefile(fname)
 
 # getting a parameter from the config file
-t1 = config["hamiltonian"]["t1"]
-print("t1 = ", t1)
+t1 = config["group_1"]["param_1"]
+print(typeof(t1))
+println()
+print("param_1 = ")
+print(t1)
 println()
 
 function mandelbrot(a)
@@ -28,6 +31,5 @@ end
 # saving some data
 save_file = config["files"]["save_file"]
 open(save_file, "w") do io
-  write(io, "t1 = ")
-  write(io, t1)
+  write(io, "t1 = $t1")
 end;
