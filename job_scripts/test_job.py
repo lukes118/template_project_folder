@@ -7,22 +7,17 @@ import numpy as np
 job_name = f"{datetime.date.today()}.test_job"
 my_job = job(job_name, project_name = "template_project_folder")
 
-# set paths
+# set paths to project and to where the job will be created
 run_loc = input('setting paths for: (mac/cluster) ')
 if run_loc == 'mac':
-    my_job.set_project_dir(os.path.join(
-           "/Users/lstaszewski/Research/Projects", my_job.project_name ,))
-    my_job.set_job_dir(os.path.join(
-            my_job.project_dir, 'jobs', my_job.job_name,))
-    my_job.set_exe(
-        os.path.join(my_job.project_dir, "code_example.jl"), 'julia')
+    my_job.set_project_dir(os.path.join("/Users/lstaszewski/Research/Projects", my_job.project_name ,))
+    my_job.set_job_dir(os.path.join(my_job.project_dir, 'jobs', my_job.job_name,))
 else:
-    my_job.set_project_dir(os.path.join(
-        "/home/lstaszewski/Research/Projects", my_job.project_name ,))
-    my_job.set_job_dir(os.path.join(
-        "/data/condmat/lstaszewski", my_job.project_name, my_job.job_name,))
-    my_job.set_exe(
-        os.path.join(my_job.project_dir, "code_example.jl"), 'julia')
+    my_job.set_project_dir(os.path.join("/home/lstaszewski/Research/Projects", my_job.project_name ,))
+    my_job.set_job_dir(os.path.join("/data/condmat/lstaszewski", my_job.project_name, my_job.job_name,))
+
+# specify path to exe and program to run it
+my_job.set_exe(os.path.join(my_job.project_dir, "code_example.jl"), program='julia')
 
 # specify the job config n.b numpy arrays will be converted
 config = {
@@ -30,7 +25,7 @@ config = {
         "param_1" : np.linspace(0, 4, 3),
     },
     "group_2" : {
-        "param_3" : 10,
+        "param_2" : 10,
     },
     "files" : {
         'save_file' : 'data.h5'
